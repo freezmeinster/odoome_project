@@ -1,0 +1,5 @@
+<odoo>
+    <data>
+        <menuitem parent="project.menu_main_pm" name="Minute of Meeting" id="mom.menu_root"/>
+    </data>
+</odoo>

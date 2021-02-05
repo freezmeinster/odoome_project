@@ -1,0 +1,41 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="mom.document_tree">
+      <field name="name">Document</field>
+      <field name="model">mom.document</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="project_id"/>
+          <field name="date"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="mom.document_form">
+      <field name="name">Document</field>
+      <field name="model">mom.document</field>
+      <field name="arch" type="xml">
+          <form>
+              <sheet>
+                  <group>
+                     <field name="name"/>
+                     <field name="project_id"/>
+                     <field name="date"/>
+                     <field name="participant_ids" widget="many2many_tags"/>
+                 </group>
+                 <field name="body" widget="html"/>
+              </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mom.action_document">
+      <field name="name">Document</field>
+      <field name="res_model">mom.document</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Document" id="mom.menu_document" parent="mom.menu_root"
+              action="mom.action_document"/>
+  </data>
+</odoo>
