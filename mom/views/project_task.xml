@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="task_from_document">
+          <field name="name">Tasks</field>
+          <field name="res_model">project.task</field>
+          <field name="context">{'default_mom_id': active_id}</field>
+          <field name="domain">[("mom_id", "=", active_id)]</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+        <record id="project_task_mom" model="ir.ui.view">
+            <field name="name">project.taks</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+               <xpath expr="//field[@name='tag_ids']" position="after"> 
+                  <field name="mom_id"/>
+               </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

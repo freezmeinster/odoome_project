@@ -9,13 +9,21 @@
                             <h3>Minute of Meeting: <t t-esc="o.name"/></h3>
                             <table class="table">
                               <tr><td>Project</td><td> : </td><td><t t-esc="o.project_id.name"/></td></tr>
-                              <tr><td>Date</td><td> : </td><td><t t-esc="o.date"/></td></tr>
-                              <tr><td>Participants</td><td> : </td><td>
-                                          <ul><t t-foreach="o.participant_ids" t-as="p">
-                                              <li><t t-esc="p.name"/></li>
-                                          </t></ul></td></tr>
+                              <tr><td>Started</td><td> : </td><td><span t-field="o.date_start"/></td></tr>
+                              <tr><td>Ended</td><td> : </td><td><span t-field="o.date_end"/></td></tr>
+                              <tr><td>Location</td><td> : </td><td><t t-esc="o.location"/></td></tr>
                             </table>
                             <t t-raw="o.body"/>
+                        </div>
+                        <div style="page-break-before: always;">
+                          <h3>Participants</h3>
+                          <table class="table">
+                            <tr><th>No</th><td>Name</td></tr>
+                            <t t-value="index" t-set="1"/>
+                            <t t-foreach="o.participant_ids" t-as="p">
+                              <tr><td><t t-raw="p_index + 1"/></td><td><t t-esc="p.name"/></td></tr>
+                            </t>
+                          </table>
                         </div>
                       </t>
                 </t>
