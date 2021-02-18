@@ -10,13 +10,13 @@
                  <div class="app_settings_block" data-string="Minute of Meeting" string="Minute of Meeting" data-key="mom">
                      <h2>Minute of Meeting</h2>
                      <div class="row mt16 o_settings_container">
-                        <div class="col-lg-6 col-12 o_setting_box" id="price_callback_url">
+                        <div class="col-lg-6 col-12 o_setting_box" id="mom_default_stage_id">
                             <div class="o_setting_left_pane"/>
                             <div class="o_setting_right_pane">
                                 <span class="o_form_label">Default Stage</span>
                                 <div class="content-group">
                                     <div class="row mt16">
-                                        <label string="Stage" for="price_callback_url" class="col-lg-3 o_light_label"/>
+                                        <label string="Stage" for="mom_default_stage_id" class="col-lg-3 o_light_label"/>
                                         <field name="mom_default_stage_id"/>
                                     </div>
                                 </div>
